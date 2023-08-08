@@ -1,0 +1,10 @@
+---
+- name: Install Nginx
+  apt:
+    name: nginx
+    state: present
+
+- name: Restart Nginx  # This should match the name in the 'notify' section of the task
+  systemd:
+    name: nginx
+    state: restarted
